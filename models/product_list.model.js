@@ -12,15 +12,20 @@ const product_listSchema = new mongoose.Schema({
         required : true,
     },
     price : {
-        type : Number,
+        type : String,
         require : true
     },
-    brand: {
-        type: String,
-    },
     category: {
+        type: String
+    },
+    userId: {
+        type: String
+    },
+    Company: {
         type: String
     }
 })
 
-export default product_listSchema;
+const Product = mongoose.model('products', product_listSchema)
+
+module.exports = Product;
