@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const UserRoute = require('./routes/user.route')
+const ProductRoute = require('./routes/product.route')
 
 //middleware
 const app = express();
@@ -29,6 +30,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/user', UserRoute)
+app.use('/product', ProductRoute)
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
